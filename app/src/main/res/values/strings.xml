@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">CadList</string>
+    <string name="btnCadastro">Cadastramento</string>
+    <string name="btnLista">Lista</string>
+    <string name="btnCadCategoria">Cadastro de Categoria</string>
+    <string name="btnCadProduto">Cadastramento de Produto</string>
+    <string name="btnAddFoto">Add</string>
+    <string name="btnCadastrarProduto">Cadastrar Produto</string>
+    <string name="selecionarCategoria">Selecione uma Categoria</string>
+    <string name="NomeProduto" />
+    <string name="QtdProduto" />
+    <string name="precoDoProduto" />
+    <string name="catview">Nome da Categoria</string>
+    <string name="btnCadastroCategoria">Cadastrar Categoria</string>
+    <string name="edtNomeCategoria" />
+</resources>
