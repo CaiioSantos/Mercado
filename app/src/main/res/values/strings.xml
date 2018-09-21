@@ -13,4 +13,8 @@
     <string name="catview">Nome da Categoria</string>
     <string name="btnCadastroCategoria">Cadastrar Categoria</string>
     <string name="edtNomeCategoria" />
+    <string name="nome_do_produto">Nome do Produto</string>
+    <string name="todo">TODO</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="pre_o_ex_r_5_00">Preço,Ex:R$5,00</string>
 </resources>

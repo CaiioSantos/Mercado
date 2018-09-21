@@ -8,7 +8,7 @@ public class Produto {
     private Categoria categoria;
 
 
-    public Categoria getCategoria() {
+    public Categoria getCategoria(String s) {
         return categoria;
     }
 
@@ -36,7 +36,7 @@ public class Produto {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 
@@ -44,7 +44,7 @@ public class Produto {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(String preco) {
         this.preco = preco;
     }
 

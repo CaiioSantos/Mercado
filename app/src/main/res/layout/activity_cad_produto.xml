@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_add_a_photo_black_48dp"
-        android:onClick="inserirFoto"/>
+        android:onClick="inserirFoto"
+        android:contentDescription="@string/todo" />
 
     <EditText
         android:id="@+id/nome_produto"
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Nome do Produto"
+        android:hint="@string/nome_do_produto"
         android:inputType="textPersonName"
         android:text="@string/NomeProduto"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -36,10 +37,9 @@
         android:id="@+id/qtd_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Quantidade"
+        android:hint="@string/quantidade"
         android:inputType="number"
         android:text="@string/QtdProduto"
         app:layout_constraintEnd_toEndOf="@+id/nome_produto"
@@ -52,45 +52,45 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Preço,Ex:R$5,00"
+        android:hint="@string/pre_o_ex_r_5_00"
         android:inputType="numberDecimal"
         android:text="@string/precoDoProduto"
         app:layout_constraintEnd_toEndOf="@+id/qtd_produto"
         app:layout_constraintStart_toStartOf="@+id/qtd_produto"
         app:layout_constraintTop_toBottomOf="@+id/qtd_produto" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="361dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="36dp"
-        android:textColor="@color/Preto"
-        android:visibility="visible"
-        app:layout_constraintEnd_toEndOf="@+id/preco_produto"
-        app:layout_constraintStart_toStartOf="@+id/preco_produto"
-        app:layout_constraintTop_toBottomOf="@+id/preco_produto"
-        tools:spinnerMode="dropdown" />
-
     <Button
         android:id="@+id/btn_CadastrarProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/btnCadastrarProduto"
-        app:layout_constraintEnd_toEndOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="btnCadastro"/>
 
     <TextView
         android:id="@+id/selecionar_categoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/selecionarCategoria"
-        app:layout_constraintBottom_toTopOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="@+id/preco_produto"
+        app:layout_constraintStart_toStartOf="@+id/preco_produto"
         app:layout_constraintTop_toBottomOf="@+id/preco_produto" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="0dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selecionar_categoria" />
 
 </android.support.constraint.ConstraintLayout>

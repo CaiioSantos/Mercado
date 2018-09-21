@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-public class Categoria {
+public class Categoria extends Produto {
     private String uid;
     private String nome;
 

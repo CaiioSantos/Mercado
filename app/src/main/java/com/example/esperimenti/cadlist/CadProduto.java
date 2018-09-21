@@ -23,16 +23,20 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-public class CadProduto extends AppCompatActivity {
+public class    CadProduto extends AppCompatActivity {
 
     EditText edtnome,edtqtd,edtpreco;
-    private Spinner list_Categoria;
+    String nomeCategoria;
+    Spinner list_Categoria;
 
     private List<Categoria> listCategoria = new ArrayList<>();
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Produto produtoSelecionado;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,8 @@ public class CadProduto extends AppCompatActivity {
         list_Categoria = findViewById(R.id.spinner);
 
         iniciarFirebase();
+
+
 
         databaseReference.child("Categoria").addValueEventListener(new ValueEventListener() {
             @Override
@@ -64,6 +70,7 @@ public class CadProduto extends AppCompatActivity {
 
                 list_Categoria.setAdapter(adapter);
 
+
             }
 
             @Override
@@ -72,11 +79,15 @@ public class CadProduto extends AppCompatActivity {
             }
         });
 
-        /*ArrayAdapter<Categoria> adapter = new ArrayAdapter<Categoria>(this,
-                android.R.layout.simple_spinner_item,catList);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        list_Categoria.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                produtoSelecionado = (Produto) parent.getItemAtPosition(position);
+                nomeCategoria =produtoSelecionado.getNome();
 
-        list_Categoria.setAdapter(adapter);*/
+            }
+        });
+
 
 
     }
@@ -108,5 +119,15 @@ public class CadProduto extends AppCompatActivity {
     }
 
 
-
+    public void btnCadastro(View view) {
+        Produto produto = new Produto();
+        Categoria c = new Categoria();
+        c.setNome(nomeCategoria);
+        produto.setCategoria(c);
+        produto.setUid(UUID.randomUUID().toString());
+        produto.setNome(edtnome.getText().toString());
+        produto.setQuantidade(edtqtd.getText().toString());
+        produto.setPreco(edtpreco.getText().toString());
+       // databaseReference.child("Categoria").child(nomeCategoria).child(produto.getNome()).setValue(produto);
+    }
 }
