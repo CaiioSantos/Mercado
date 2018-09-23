@@ -92,7 +92,7 @@ public class CadCategoria extends AppCompatActivity {
     private void iniciarFireBase() {
         FirebaseApp.initializeApp(getApplicationContext());
         firebaseDatabase = FirebaseDatabase.getInstance();
-        firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);
         databaseReference = firebaseDatabase.getReference();
     }
 

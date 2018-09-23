@@ -3,8 +3,8 @@ package com.example.esperimenti.cadlist.model;
 public class Produto {
     private String uid;
     private String nome;
-    private int    quantidade;
-    private double preco;
+    private String quantidade;
+    private String preco;
     private Categoria categoria;
 
 
@@ -32,7 +32,7 @@ public class Produto {
         this.nome = nome;
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
@@ -40,7 +40,7 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public double getPreco() {
+    public String getPreco() {
         return preco;
     }
 

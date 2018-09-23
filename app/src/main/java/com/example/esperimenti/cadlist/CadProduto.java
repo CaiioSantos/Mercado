@@ -5,12 +5,15 @@ import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 
 import com.example.esperimenti.cadlist.model.Categoria;
 import com.example.esperimenti.cadlist.model.Produto;
@@ -28,7 +31,7 @@ import java.util.UUID;
 public class    CadProduto extends AppCompatActivity {
 
     EditText edtnome,edtqtd,edtpreco;
-    String nomeCategoria;
+    Categoria nomeCategoria;
     Spinner list_Categoria;
 
     private List<Categoria> listCategoria = new ArrayList<>();
@@ -63,12 +66,26 @@ public class    CadProduto extends AppCompatActivity {
                 }
 
 
-                ArrayAdapter<Categoria> adapter = new ArrayAdapter<Categoria>(getApplicationContext(),
+                final ArrayAdapter<Categoria> adapter = new ArrayAdapter<Categoria>(getApplicationContext(),
                         android.R.layout.simple_spinner_item, listCategoria);
 
                 adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 list_Categoria.setAdapter(adapter);
+
+
+                list_Categoria.setOnItemSelectedListener(new OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        nomeCategoria = adapter.getItem(position);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
 
 
             }
@@ -79,18 +96,8 @@ public class    CadProduto extends AppCompatActivity {
             }
         });
 
-        list_Categoria.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                produtoSelecionado = (Produto) parent.getItemAtPosition(position);
-                nomeCategoria =produtoSelecionado.getNome();
-
-            }
-        });
-
-
-
     }
+
 
     private void iniciarFirebase() {
         FirebaseApp.initializeApp(getApplicationContext());
@@ -122,12 +129,12 @@ public class    CadProduto extends AppCompatActivity {
     public void btnCadastro(View view) {
         Produto produto = new Produto();
         Categoria c = new Categoria();
-        c.setNome(nomeCategoria);
+        c.setNome(nomeCategoria.getNome());
         produto.setCategoria(c);
         produto.setUid(UUID.randomUUID().toString());
         produto.setNome(edtnome.getText().toString());
         produto.setQuantidade(edtqtd.getText().toString());
         produto.setPreco(edtpreco.getText().toString());
-       // databaseReference.child("Categoria").child(nomeCategoria).child(produto.getNome()).setValue(produto);
+        databaseReference.child(String.valueOf(c)).child(produto.getNome()).setValue(produto);
     }
 }
