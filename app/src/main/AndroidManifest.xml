@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.esperimenti.cadlist">
-    <uses-permission android:name= " android.permission.INTERNET "/>
+
+    <uses-permission android:name=" android.permission.INTERNET " />
 
     <application
         android:allowBackup="true"
@@ -28,7 +29,9 @@
             android:label="Cadastro de Produto" />
         <activity
             android:name=".Lista"
-            android:label="Listas"/>
+            android:label="Listas" />
+        <activity android:name=".CadCliente"
+            android:label="Cadastro de Cliente"></activity>
     </application>
 
 </manifest>

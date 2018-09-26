@@ -38,8 +38,6 @@ public class    CadProduto extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-    Produto produtoSelecionado;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,6 +133,6 @@ public class    CadProduto extends AppCompatActivity {
         produto.setNome(edtnome.getText().toString());
         produto.setQuantidade(edtqtd.getText().toString());
         produto.setPreco(edtpreco.getText().toString());
-        databaseReference.child(String.valueOf(c)).child(produto.getNome()).setValue(produto);
+        databaseReference.child("Categoria").child(String.valueOf(c)).child(produto.getNome()).setValue(produto);
     }
 }

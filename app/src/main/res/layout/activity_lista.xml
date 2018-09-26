@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".Lista">
 
+    <Button
+        android:id="@+id/btn_ListCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="@string/btnListCategoria"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="btnListaCategoria"/>
+
+    <Button
+        android:id="@+id/btn_ProcurarProduto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnProcurarProduto"
+        app:layout_constraintEnd_toEndOf="@+id/btn_ListCategoria"
+        app:layout_constraintStart_toStartOf="@+id/btn_ListCategoria"
+        tools:layout_editor_absoluteY="232dp"
+        android:onClick="btnProcurarProduto"/>
 </android.support.constraint.ConstraintLayout>

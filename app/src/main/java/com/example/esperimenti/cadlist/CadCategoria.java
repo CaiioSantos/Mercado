@@ -1,5 +1,6 @@
 package com.example.esperimenti.cadlist;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -52,6 +53,7 @@ public class CadCategoria extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long l) {
                 categoriaSelecionada = (Categoria)parent.getItemAtPosition(position);
                 edtNome.setText(categoriaSelecionada.getNome());
+
             }
         });
 
