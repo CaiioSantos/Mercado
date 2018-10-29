@@ -11,41 +11,43 @@
         android:id="@+id/btn_cadCategoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
         android:onClick="btnCadastroCategoria"
         android:text="@string/btnCadCategoria"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cadProduto"
-        app:layout_constraintEnd_toEndOf="@+id/btn_cadProduto"
-        app:layout_constraintStart_toStartOf="@+id/btn_cadProduto" />
+        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
         android:id="@+id/btn_cadProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_marginTop="50dp"
         android:onClick="btnCadastroProduto"
         android:text="@string/btnCadProduto"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="77dp" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_cadCategoria"
+        app:layout_constraintStart_toStartOf="@+id/btn_cadCategoria"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cadCategoria" />
 
     <Button
         android:id="@+id/btn_CadastroCliente"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="8dp"
         android:text="@string/btnCadastroCliente"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/button2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
         android:text="@string/btnCadastrarVeiculo"
-        app:layout_constraintBottom_toTopOf="@+id/btn_cadCategoria"
-        app:layout_constraintStart_toStartOf="@+id/btn_cadCategoria" />
+        app:layout_constraintEnd_toEndOf="@+id/btn_CadastroCliente"
+        app:layout_constraintStart_toStartOf="@+id/btn_CadastroCliente"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CadastroCliente" />
 </android.support.constraint.ConstraintLayout>

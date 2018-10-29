@@ -8,30 +8,20 @@
     tools:layout_editor_absoluteY="81dp"
     tools:ignore="ExtraText">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_add_a_photo_black_48dp"
-        android:onClick="inserirFoto"
-        android:contentDescription="@string/todo" />
-
     <EditText
         android:id="@+id/nome_produto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="8dp"
         android:ems="10"
         android:hint="@string/nome_do_produto"
         android:inputType="textPersonName"
         android:text="@string/NomeProduto"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
-        app:layout_constraintStart_toStartOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/qtd_produto"

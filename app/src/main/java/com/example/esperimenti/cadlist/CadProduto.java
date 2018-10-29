@@ -104,24 +104,6 @@ public class    CadProduto extends AppCompatActivity {
         databaseReference = firebaseDatabase.getReference();
     }
 
-    public void inserirFoto(View view) {
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        startActivityForResult(intent , 0);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(data != null){
-            Bundle bundle =  data.getExtras();
-            if (bundle != null){
-                Bitmap img = (Bitmap) bundle.get("data");
-
-                ImageView iv = findViewById(R.id.imageView2);
-                iv.setImageBitmap(img);
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
 
 
     public void btnCadastro(View view) {

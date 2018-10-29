@@ -13,13 +13,4 @@ public class Lista extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
     }
 
-    public void btnListaCategoria(View view) {
-        Intent listcat = new Intent(getApplicationContext(),DadosCatProduto.class);
-        startActivity(listcat);
-    }
-
-    public void btnProcurarProduto(View view) {
-
-
-    }
 }

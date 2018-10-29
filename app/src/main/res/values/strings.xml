@@ -26,4 +26,8 @@
     <string name="edtTelefone" />
     <string name="edtDataNascimento" />
     <string name="btnCadCliente">Cadastrar</string>
+    <string name="edtPlacaCarro" />
+    <string name="edtTipoDeVeiculo" />
+    <string name="textSelecioneCliente" />
+    <string name="btnCadVeiculo">Cadastrar Veiculo</string>
 </resources>
